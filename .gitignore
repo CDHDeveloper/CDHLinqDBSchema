@@ -216,3 +216,4 @@ pip-log.txt
 
 # Subversion
 *.svn-base
+*/.svn/entries
