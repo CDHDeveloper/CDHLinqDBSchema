@@ -65,16 +65,16 @@ namespace SandBox.Generators
 
         private string WriteClassHeader(string mapClass, string baseClass)
         {
-            return string.Format("public class {0} : ClassMap<{1}>\r\n{2}\r\n", mapClass, baseClass, "}");
+            return string.Format("\tpublic class {0} : ClassMap<{1}>\r\n{2}\r\n", mapClass, baseClass, "\t{");
         }
 
         private string WriteConstructor(string mapClass, Table tbl, string dbName)
         {
-            string source = string.Format("\tpublic {0}()\r\n{1}\r\n", mapClass, "{");
-            source += string.Format("\t\tTable(\"[{0}].[{1}].[{2}]\");\r\n", dbName, tbl.SchemaName, tbl.Name);
+            string source = string.Format("\t\tpublic {0}()\r\n{1}\r\n", mapClass, "\t\t{");
+            source += string.Format("\t\t\tTable(\"[{0}].[{1}].[{2}]\");\r\n", dbName, tbl.SchemaName, tbl.Name);
             if (tbl.PrimaryKeys != null)
             {
-                source += string.Format("\t\tId(x => x.Id, \"{0}\").GeneratedBy.{1}();\r\n", tbl.PrimaryKeys[0], GetFNHTypeGeneratorName(tbl));
+                source += string.Format("\t\t\tId(x => x.Id, \"{0}\").GeneratedBy.{1}();\r\n", tbl.PrimaryKeys[0], GetFNHTypeGeneratorName(tbl));
             }
 
             if (tbl.ForeignKeys != null)
@@ -92,7 +92,7 @@ namespace SandBox.Generators
             // Put in refs for each one table that has this as a foreign key
             source += GetHasManys(tbl);
             source += GetHasOnes(tbl);
-
+            source += "\n\t\t}\n";
             return source;
         }
 
@@ -107,7 +107,7 @@ namespace SandBox.Generators
             string source = "";
             foreach (var hasMany in tbl.HasManys)
             {
-                source += string.Format("\t\tHasMany(x => x.{0});\r\n",
+                source += string.Format("\t\t\tHasMany(x => x.{0});\r\n",
                                     Utility.Utility.Pluralize(hasMany.Reference));
             }
             return source;
@@ -118,14 +118,14 @@ namespace SandBox.Generators
             string source = "";
             foreach (var fk in tbl.ForeignKeys)
             {
-                source += string.Format("\t\tReferences(x => x.{0}).Column(\"{1}\");\r\n", fk.PrimaryTableName, fk.ForeignColumnName);
+                source += string.Format("\t\t\tReferences(x => x.{0}).Column(\"{1}\");\r\n", fk.PrimaryTableName, fk.ForeignColumnName);
             }
             return source;
         }
 
         private string GetMappingLineForColumn(Column column)
         {
-            string source = string.Format("\t\tMap(x => x.{0}, \"{1}\")", column.Name, column.Name);
+            string source = string.Format("\t\t\tMap(x => x.{0}, \"{1}\")", column.Name, column.Name);
 
             if (column.IsNullable == false)
             {

@@ -1,1 +1,0 @@
-﻿This DBML is mainly in here for development purposes to use as a cheat sheet for design of classes to represent the system tables.
