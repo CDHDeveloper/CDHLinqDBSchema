@@ -62,37 +62,6 @@ namespace SandBox
                 MessageBox.Show("You need to fill in the Namespace");
                 return;
             }
-            /*
-            if (chkGenerateDataContextClass.Checked)
-            {
-                Solution.Settings.LinqSettings.MakeDataContextCSFile = true;
-                var source = WriteUsings();
-                var className = _schemaFactory.DataBase.Connection.Database + "Context";
-                source += WriteNameSpaceHeader();
-                source += WriteDataContextClassHeader();
-                source += WriteDataContextClass(className);
-                source += WriteNameSpaceFooter();
-                File.WriteAllText(Path.Combine(textBox2.Text, className + ".cs"), source);
-
-            }
-            foreach (var tbl in _schemaFactory.DataBase.Tables)
-            {
-                var srcDir = textBox2.Text;
-                var source = WriteUsings();
-                source += WriteNameSpaceHeader();
-                source += WriteTableClassHeader(tbl);
-                
-                foreach (var col in tbl.Columns)
-                {
-                    source += WriteColumnAttribute(col, tbl);
-                    source += WriteColumnProperty(col);
-                }
-                source += WriteClassFooter();
-                source += WriteNameSpaceFooter();
-                File.WriteAllText(Path.Combine(srcDir, tbl.Name + ".cs"), source);
-                // this.textBox4.Text = source;
-            }
-            */
 
             // Init Solution info
             Solution.Solution solution = new Solution.Solution();

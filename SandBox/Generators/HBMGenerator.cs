@@ -21,7 +21,6 @@ namespace SandBox.Generators
 
         public override bool Generate()
         {
-            // Mapping.Assembly = 
             foreach (var tbl in DBInfo.DataBase.Tables)
             {
                 Mapping.Class = new HBMClass
@@ -79,7 +78,6 @@ namespace SandBox.Generators
                                 Key = new HBMKey { Column = foreignKey.ForeignColumnName},
                                 OneToMany = new HBMOneToMany { Class = Utility.Utility.Singularize(foreignKey.ForeignTableName) } 
                             };
-                        // bag.Key = "";
                     }
                 }
                 WriteHBMFile(Mapping);
@@ -109,13 +107,6 @@ namespace SandBox.Generators
             return ident;
         }
 
-        public void MakeHBMFile()
-        {
-            XDocument xDoc = new XDocument();
-            xDoc.Root.Add();
-            
-        }
-
         public void WriteHBMFile(HBMMapping mapping)
         {
             XElement hbm = MakeHBMXml();
@@ -132,6 +123,7 @@ namespace SandBox.Generators
         public XElement MakeHBMXml()
         {
             XNamespace ns = NHStrings.HibernateNamespace; 
+
             // the element defining the class that represents the table/object
             XElement elem = MakeClassXElement(ns); 
 

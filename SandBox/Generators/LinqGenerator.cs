@@ -90,20 +90,27 @@ namespace SandBox.Generators
         private string WriteDataContextClass(string className)
         {
             var output = string.Empty;
-            output += string.Format("\tpublic class {0}\r\n\t{1}\r\n", className, "{");
+            output += string.Format("\tpublic class {0} : System.Data.Linq.DataContext\r\n\t{1}\r\n", className, "{");
+            output += WriteDataContextConstructor(className);
             foreach (var tbl in DBInfo.DataBase.Tables)
             {
                 output += WriteTableProperty(tbl);
             }
             return output;
         }
+
+        private string WriteDataContextConstructor(string className)
+        {
+            return string.Format("\t\tpublic {0}(string connection) : base(connection)\r\n\t\t{1}\r\n\t\t{2}\r\n\r\n", className, "{", "}");
+        }
+
         private static string WriteTableProperty(Table tbl)
         {
             var source = string.Empty;
             source += string.Format("\t\tpublic Table<{0}> {1}\r\n", tbl.Name, Utility.Utility.Pluralize(tbl.Name));
             source += string.Format("\t\t{0}\r\n\t\t\tget\r\n", "{");
             source += string.Format("\t\t\t{0}\r\n", "{");
-            source += string.Format("\t\t\t\treturn GetTable<{0}>();\r\n\t\t\t\t{1}\r\n\t\t\t{2}\r\n\r\n", tbl.Name, "}", "}");
+            source += string.Format("\t\t\t\treturn GetTable<{0}>();\r\n\t\t\t{1}\r\n\t\t{2}\r\n\r\n", tbl.Name, "}", "}");
             return source;
         }
 
