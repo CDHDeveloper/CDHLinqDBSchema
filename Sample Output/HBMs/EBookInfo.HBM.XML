@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EBookInfo" table="EBookInfo" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="EBookId" column="EBookId" type="int" not-null="true" precision="10" />
+    <property name="AuthorId" column="AuthorId" type="int" not-null="true" precision="10" />
+    <property name="PublisherId" column="PublisherId" type="int" not-null="true" precision="10" />
+    <property name="LanguageId" column="LanguageId" type="int" not-null="true" precision="10" />
+    <property name="PageCount" column="PageCount" type="int" not-null="true" precision="10" />
+    <property name="ThumbURI" column="ThumbURI" type="string" not-null="true" />
+    <property name="ImageURI" column="ImageURI" type="string" not-null="true" />
+    <property name="Description" column="Description" type="string" not-null="true" />
+  </class>
+</hibernate-mapping>

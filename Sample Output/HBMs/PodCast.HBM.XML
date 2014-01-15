@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PodCast" table="PodCast" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="URI" column="URI" type="string" not-null="true" />
+    <property name="Name" column="Name" type="string" not-null="true" length="250" />
+    <property name="Description" column="Description" type="string" not-null="true" />
+    <property name="AutoDownload" column="AutoDownload" type="bool" not-null="true" />
+    <property name="DateAdded" column="DateAdded" type="DateTime" not-null="true" />
+    <property name="LastUpdate" column="LastUpdate" type="DateTime" not-null="true" />
+    <property name="LastDownload" column="LastDownload" type="DateTime" not-null="true" />
+    <property name="LastChecked" column="LastChecked" type="DateTime" not-null="true" />
+    <property name="ImageURI" column="ImageURI" type="string" not-null="true" />
+    <property name="IsVidCast" column="IsVidCast" type="bool" not-null="true" />
+  </class>
+</hibernate-mapping>

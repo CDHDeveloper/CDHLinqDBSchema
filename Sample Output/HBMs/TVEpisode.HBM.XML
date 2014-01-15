@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TVEpisode" table="TVEpisode" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="SeasonId" column="SeasonId" type="int" not-null="true" precision="10" />
+    <property name="Number" column="Number" type="int" not-null="true" precision="10" />
+    <property name="Name" column="Name" type="string" not-null="true" />
+    <property name="AirDate" column="AirDate" type="DateTime" not-null="true" />
+  </class>
+</hibernate-mapping>

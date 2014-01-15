@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MediaItem" table="MediaItem" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="FileTypeId" column="FileTypeId" type="int" not-null="true" precision="10" />
+    <property name="URI" column="URI" type="string" not-null="true" />
+    <property name="LastUpdate" column="LastUpdate" type="DateTime" not-null="true" />
+  </class>
+</hibernate-mapping>

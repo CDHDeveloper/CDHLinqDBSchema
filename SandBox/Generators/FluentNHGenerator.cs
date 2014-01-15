@@ -118,14 +118,14 @@ namespace SandBox.Generators
             string source = "";
             foreach (var fk in tbl.ForeignKeys)
             {
-                source += string.Format("References(x => x.{0}).Column(\"{1}\");\r\n", fk.PrimaryTableName, fk.ForeignColumnName);
+                source += string.Format("\t\tReferences(x => x.{0}).Column(\"{1}\");\r\n", fk.PrimaryTableName, fk.ForeignColumnName);
             }
             return source;
         }
 
         private string GetMappingLineForColumn(Column column)
         {
-            string source = string.Format("Map(x => x.{0}, \"{1}\")", column.Name, column.Name);
+            string source = string.Format("\t\tMap(x => x.{0}, \"{1}\")", column.Name, column.Name);
 
             if (column.IsNullable == false)
             {

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MediaMark" table="MediaMark" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="Name" column="Name" type="string" not-null="true" length="50" />
+    <property name="Position" column="Position" type="int" not-null="true" precision="10" />
+    <property name="UserId" column="UserId" type="int" not-null="true" precision="10" />
+    <property name="MediaObjectMediaItemId" column="MediaObjectMediaItemId" type="int" not-null="true" precision="10" />
+  </class>
+</hibernate-mapping>

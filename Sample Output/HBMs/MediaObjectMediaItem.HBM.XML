@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MediaObjectMediaItem" table="MediaObjectMediaItem" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="MediaObjectId" column="MediaObjectId" type="int" not-null="true" precision="10" />
+    <property name="MediaItemId" column="MediaItemId" type="int" not-null="true" precision="10" />
+    <property name="Ordinal" column="Ordinal" type="int" not-null="true" precision="10" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EBook" table="EBook" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="Title" column="Title" type="string" not-null="true" />
+    <property name="ThumbURI" column="ThumbURI" type="string" not-null="true" />
+    <property name="DateAdded" column="DateAdded" type="DateTime" not-null="true" />
+    <property name="LastUpdate" column="LastUpdate" type="DateTime" not-null="true" />
+  </class>
+</hibernate-mapping>

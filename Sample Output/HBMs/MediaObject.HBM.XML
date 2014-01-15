@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MediaObject" table="MediaObject" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="Name" column="Name" type="string" not-null="true" length="250" />
+    <property name="MediaType" column="MediaType" type="int" not-null="true" precision="10" />
+    <property name="MediaSubType" column="MediaSubType" type="int" not-null="true" precision="10" />
+  </class>
+</hibernate-mapping>

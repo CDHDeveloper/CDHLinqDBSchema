@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PodCastEpisode" table="PodCastEpisode" xmlns="">
+    <identity name="Id" type="int" column="Id">
+      <generator class="assigned" />
+    </identity>
+    <property name="PodCastId" column="PodCastId" type="int" not-null="true" precision="10" />
+    <property name="URI" column="URI" type="string" not-null="true" />
+    <property name="PostedDate" column="PostedDate" type="DateTime" not-null="true" />
+    <property name="Description" column="Description" type="string" not-null="true" length="250" />
+    <property name="FileSize" column="FileSize" type="int" not-null="true" precision="10" />
+    <property name="Duration" column="Duration" type="int" not-null="true" precision="10" />
+    <property name="MediaObjectId" column="MediaObjectId" type="int" not-null="true" precision="10" />
+  </class>
+</hibernate-mapping>
