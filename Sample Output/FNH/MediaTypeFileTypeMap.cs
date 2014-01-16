@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public MediaTypeFileTypeMap()
 		{
-			Table("[NTeract].[].[MediaTypeFileType]");
+			Table("[NTeract].[dbo].[MediaTypeFileType]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.MediaType).Column("MediaTypeId");
 			References(x => x.FileType).Column("FileTypeId");

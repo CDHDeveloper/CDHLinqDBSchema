@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public FileTypeFileExtensionMap()
 		{
-			Table("[NTeract].[].[FileTypeFileExtension]");
+			Table("[NTeract].[dbo].[FileTypeFileExtension]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.FileType).Column("FileTypeId");
 			References(x => x.FileExtension).Column("FileExtensionId");

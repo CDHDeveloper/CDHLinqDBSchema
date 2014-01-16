@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public EBookFormatItemMap()
 		{
-			Table("[NTeract].[].[EBookFormatItem]");
+			Table("[NTeract].[dbo].[EBookFormatItem]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.MediaObject).Column("MediaObjectId");
 			References(x => x.EBook).Column("EBookId");

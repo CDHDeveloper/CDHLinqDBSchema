@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public MediaViewerUIPlatformMap()
 		{
-			Table("[NTeract].[].[MediaViewerUIPlatform]");
+			Table("[NTeract].[dbo].[MediaViewerUIPlatform]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.MediaViewer).Column("MediaViewerId");
 			Map(x => x.Id, "Id").Not.Nullable();

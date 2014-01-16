@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public MediaPlaybackMap()
 		{
-			Table("[NTeract].[].[MediaPlayback]");
+			Table("[NTeract].[dbo].[MediaPlayback]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.MediaMark).Column("MediaMarkId");
 			Map(x => x.Id, "Id").Not.Nullable();

@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public PodCastMap()
 		{
-			Table("[NTeract].[].[PodCast]");
+			Table("[NTeract].[dbo].[PodCast]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			Map(x => x.Id, "Id").Not.Nullable();
 			Map(x => x.URI, "URI");

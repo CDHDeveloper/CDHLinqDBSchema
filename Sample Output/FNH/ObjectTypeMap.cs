@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public ObjectTypeMap()
 		{
-			Table("[NTeract].[].[ObjectType]");
+			Table("[NTeract].[dbo].[ObjectType]");
 			Map(x => x.Id, "Id").Not.Nullable();
 			Map(x => x.Description, "Description").Length(50);
 

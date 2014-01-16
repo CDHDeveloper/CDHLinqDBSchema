@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public UserInfoMap()
 		{
-			Table("[NTeract].[].[UserInfo]");
+			Table("[NTeract].[dbo].[UserInfo]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			Map(x => x.UserId, "UserId").Not.Nullable();
 			Map(x => x.Email, "Email");

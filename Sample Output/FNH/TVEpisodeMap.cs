@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public TVEpisodeMap()
 		{
-			Table("[NTeract].[].[TVEpisode]");
+			Table("[NTeract].[dbo].[TVEpisode]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.TVSeason).Column("SeasonId");
 			Map(x => x.Id, "Id").Not.Nullable();

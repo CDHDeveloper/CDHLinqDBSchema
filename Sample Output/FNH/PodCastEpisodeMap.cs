@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public PodCastEpisodeMap()
 		{
-			Table("[NTeract].[].[PodCastEpisode]");
+			Table("[NTeract].[dbo].[PodCastEpisode]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.PodCast).Column("PodCastId");
 			References(x => x.MediaObject).Column("MediaObjectId");

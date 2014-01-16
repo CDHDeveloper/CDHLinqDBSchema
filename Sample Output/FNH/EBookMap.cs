@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public EBookMap()
 		{
-			Table("[NTeract].[].[EBook]");
+			Table("[NTeract].[dbo].[EBook]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			Map(x => x.Id, "Id").Not.Nullable();
 			Map(x => x.Title, "Title");

@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public TVChannelMap()
 		{
-			Table("[NTeract].[].[TVChannel]");
+			Table("[NTeract].[dbo].[TVChannel]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.TVStation).Column("StationId");
 			Map(x => x.Id, "Id").Not.Nullable();

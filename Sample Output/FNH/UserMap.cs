@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public UserMap()
 		{
-			Table("[NTeract].[].[User]");
+			Table("[NTeract].[dbo].[User]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.UserInfo).Column("Id");
 			Map(x => x.LoginName, "LoginName").Length(50);

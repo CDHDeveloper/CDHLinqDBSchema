@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public UserGroupMap()
 		{
-			Table("[NTeract].[].[UserGroup]");
+			Table("[NTeract].[dbo].[UserGroup]");
 			References(x => x.Group).Column("GroupId");
 			References(x => x.User).Column("UserId");
 			Map(x => x.Id, "Id").Not.Nullable();

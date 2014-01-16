@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public MediaObjectMediaItemMap()
 		{
-			Table("[NTeract].[].[MediaObjectMediaItem]");
+			Table("[NTeract].[dbo].[MediaObjectMediaItem]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.MediaObject).Column("MediaObjectId");
 			References(x => x.MediaItem).Column("MediaItemId");

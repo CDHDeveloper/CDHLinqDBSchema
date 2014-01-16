@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public AppRoleMap()
 		{
-			Table("[NTeract].[].[AppRole]");
+			Table("[NTeract].[dbo].[AppRole]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			Map(x => x.Id, "Id").Not.Nullable();
 			Map(x => x.Name, "Name").Length(10);

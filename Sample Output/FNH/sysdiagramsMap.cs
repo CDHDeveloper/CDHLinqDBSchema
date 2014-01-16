@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public sysdiagramsMap()
 		{
-			Table("[NTeract].[].[sysdiagrams]");
+			Table("[NTeract].[dbo].[sysdiagrams]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			Map(x => x.name, "name").Not.Nullable().Length(128);
 			Map(x => x.principal_id, "principal_id").Not.Nullable();

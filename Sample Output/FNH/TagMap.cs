@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public TagMap()
 		{
-			Table("[NTeract].[].[Tag]");
+			Table("[NTeract].[dbo].[Tag]");
 			Map(x => x.Id, "Id");
 			Map(x => x.Name, "Name").Length(50);
 

@@ -8,7 +8,7 @@ namespace CDH.Mapping
 	{
 		public FileExtensionMediaViewerMap()
 		{
-			Table("[NTeract].[].[FileExtensionMediaViewer]");
+			Table("[NTeract].[dbo].[FileExtensionMediaViewer]");
 			Id(x => x.Id, "CDH.LinqDBSchema.PrimaryKey").GeneratedBy.Identity();
 			References(x => x.FileExtension).Column("FileExtensionId");
 			References(x => x.MediaViewer).Column("MediaViewerId");
