@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CDH.LinqDBSchema.SystemObjects;
 
 namespace CDH.LinqDBSchema
 {
@@ -39,13 +40,6 @@ namespace CDH.LinqDBSchema
         {
             ConnectionString = connectionString;
             DataBase = new DatabaseContext(connectionString);
-            foreach (var tbl in DataBase.Tables)
-            {
-                var name = tbl.Name;
-                var schemaName = DataBase.InfoSchemaTables.Single(t => t.TableName == name).TableSchema;
-                tbl.FillInSchema(schemaName);
-            }
-
         }
 
         private static SchemaFactory _instance;

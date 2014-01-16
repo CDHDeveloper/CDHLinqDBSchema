@@ -125,10 +125,6 @@ namespace SandBox.Generators
 
         private static string WriteTableAttribute(Table tbl)
         {
-            if (tbl.SchemaName == null)
-            {
-                tbl.SchemaName = tbl.Columns[0].SchemaName;
-            }
             var retString = string.Format("\t[Table(Name=\"{0}.{1}\")]\r\n", tbl.SchemaName, tbl.Name);
             return retString;
         }

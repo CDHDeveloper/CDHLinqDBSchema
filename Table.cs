@@ -30,7 +30,12 @@ namespace CDH.LinqDBSchema
 
         public List<CheckConstraint> CheckConstraints { get; set; }
 
-        public string SchemaName { get; set; }
+        private string _schemaName;
+        public string SchemaName
+        {
+            get { return _schemaName ?? (_schemaName = GetSchema()); }
+            set { _schemaName = value; }
+        }
 
         private List<Column> _columns;
         public List<Column> Columns 
@@ -62,7 +67,6 @@ namespace CDH.LinqDBSchema
 
         public Table()
         {
-            // SchemaName = SchemaFactory.Instance.DataBase.InfoSchemaTables.Single(t => t.TableName == Name).TableSchema;
         }
 
         public Table(string name) 
@@ -74,9 +78,10 @@ namespace CDH.LinqDBSchema
             HasManys = GetHasManys();
         }
 
-        public void FillInSchema(string schemaName)
+        private string GetSchema()
         {
-            SchemaName = schemaName;
+            var infoSchemaTable = SchemaFactory.Instance.DataBase.InfoSchemaTables.Single(t => t.TableName == Name);
+            return infoSchemaTable.TableSchema;
         }
 
         public List<Column> GetColumns()
